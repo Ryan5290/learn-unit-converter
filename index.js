@@ -5,16 +5,24 @@
 */
 
 const inputEl = document.getElementById("input-el")
+const converBtn = document.getElementById("convert-btn")
 const lengthEl = document.getElementById("length-el")
 const volumeEl = document.getElementById("volume-el")
 const massEl = document.getElementById("mass-el")
 
-const testInput = 20
+converBtn.addEventListener("click", function() {
+    const inputNum = Number(inputEl.value)
 
-lengthEl.textContent = `${testInput} meters = ${convertToLength(testInput, true)} feet | ${testInput} feet = ${convertToLength(testInput, false)} meters`
-volumeEl.textContent = `${testInput} `
-// 20 liters = 5.284 gallons | 20 gallons = 75.708 liters
-// 20 kilos = 44.092 pounds | 20 pounds = 9.072 kilos
+    if (inputNum) {
+        lengthEl.textContent = `${inputNum} meters = ${convertToLength(inputNum, true)} feet | ${inputNum} feet = ${convertToLength(inputNum, false)} meters`
+        volumeEl.textContent = `${inputNum} liters = ${convertToVolume(inputNum, true)} gallons | ${inputNum} gallons = ${convertToVolume(inputNum, false)} liters`
+        massEl.textContent = `${inputNum} kilos = ${convertToMass(inputNum, true)} pounds | ${inputNum} pounds = ${convertToMass(inputNum, false)} kilos`
+    } else {
+        inputEl.value = ""
+    }
+})
+
+
 
 // Conversions
 function convertToLength(input, isMeter) {
@@ -40,8 +48,6 @@ function convertToMass(input, isKg) {
         return (input / 2.204).toFixed(3) // returns kg
     }
 }
-
-// SetHTML
 
 
 // Tests
