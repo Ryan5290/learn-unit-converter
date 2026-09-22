@@ -4,21 +4,23 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <h1>Metric/Imperial Unit Conversion</h1>
-        <input type="text" id="input-el">
-        <button id="convert-btn">Convert</button>
+        <div id="input-area">
+            <h1>Metric/Imperial Unit Conversion</h1>
+            <input type="text" id="input-el">
+            <button id="convert-btn">Convert</button>
+        </div>
 
-        <div>
-            <div>
-                <h2>Length</h2>
+        <div id="output-area">
+            <div class="conver-el" id="top-el">
+                <h2>Length (Meter/Feet)</h2>
                 <p id="length-el"></p>
             </div>
-            <div>
-                <h2>Volume</h2>
+            <div class="conver-el">
+                <h2>Volume (Liters/Gallons)</h2>
                 <p id="volume-el"></p>
             </div>
-            <div>
-                <h2>Mass</h2>
+            <div class="conver-el">
+                <h2>Mass (Kilograms/Pounds)</h2>
                 <p id="mass-el"></p>
             </div>
         </div>
